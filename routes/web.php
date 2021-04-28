@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\admin\AuthController;
+use App\Http\Controllers\admin\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('admin/home/index');
 });
+
+//start login
+Route::get('/login',[AuthController::class, 'index']);
+//end login
+
+//start home
+Route::get('/home',[HomeController::class, 'index']);
+//end home
